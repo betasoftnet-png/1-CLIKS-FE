@@ -202,6 +202,11 @@ const Sidebar = ({ isOpen, onReferralClick, onItemClick, onLogoClick }) => {
         return () => { isMounted = false; };
     }, [isStorageModalOpen]);
 
+    const [isFinanceOpen, setIsFinanceOpen] = useState(
+        location.pathname.includes('/books/finance') ||
+        location.pathname.includes('/books/accounting') ||
+        location.pathname.includes('/books/purchase-details')
+    );
     const [isTrackOpen, setIsTrackOpen] = useState(location.pathname.includes('/books/track') || location.pathname.includes('/books/money-tracker'));
 
     // Update active item when location changes
